@@ -1,0 +1,113 @@
+#### Environments vs. Anaconda #### 
+
+Virtual environments and Anaconda serve a very similar purpose. Anaconda is a distribution of Python 
+(and the analytics language R) specifically for data science. Anaconda comes installed with a package and 
+environment manager called conda. You can create separate environments using conda. However, these 
+environments automatically come with Python packages meant for data science.
+
+Virtual environments, on the other hand, come with the Python language but do not pre-install other packages. 
+The classroom workspace has many other Python libraries pre-installed including an installation of Anaconda.
+
+When installing a web app to a server, you should only include the packages that are necessary for running 
+your web app. Otherwise you'd be installing Python packages that you don't need. 
+
+To ensure that your app only installs necessary packages, you should create a virtual Python environment. 
+A virtual Python environment is a separate Python installation on your computer that you can easily remove 
+and won't interfere with your main Python installation.
+
+There is more than one Python package that can set up virtual environments. In the past, you had to install
+these packages yourself. With Python 3.6, there is a virtual environment package that comes with the Python 
+installation. The packaged is called venv
+
+However, there is a bug with anaconda's 3.6 Python installation on a Linux system. So in order to use venv 
+in the workspace classroom, you first need to update the Python installation as shown in the instructions above.
+
+#### Creating a Virtual Environment in the Classroom #### 
+
+Open a terminal window in a workspace and type:
+-> conda update python
+When asked for confirmation, type y and hit enter. Your Python installation should update.
+
+Next, make sure you are in the folder where you want to build your web app. In the classroom, the workspace 
+folder is fine. But on your personal computer, you'll want to make a new folder. For example:
+-> mkdir myapp
+will create a new folder called myapp and cd myapp will change your current directory so that you are inside 
+the myapp folder.
+
+Then to create a virtual environment type:
+-> python3 -m venv name
+where name can be anything you want. You'll see a new folder appear in the workspace with your environment name.
+
+Finally, to activate the virtual environment. Type:
+-> source name/bin/activate
+You can tell that your environment is activated because the name will show up in parenthesis on the left side of the terminal.
+
+#### Creating a Virtual Environment Locally on Your Computer #### 
+You can develop your app using the classroom workspace. If you decide to develop your app locally 
+on your computer, you should set up a virtual environment there as well. Different versions of Python 
+have different ways of setting up virtual environments. Assuming you are using Python 3.6 and are on a linux or 
+macOS system, then you should be able to set up a virtual environment on your local machine just by typing:
+-> python3 -m venv name
+and then to activate:
+-> source name/bin/activate
+
+## On Windows, the command is;
+c:\>c:\Python35\python -m venv c:\path\to\myenv
+and to activate:
+C:\> <venv>\Scripts\activate.bat
+
+For more information, read through this link
+https://docs.python.org/3/tutorial/venv.html
+
+#### Databases for Your App #### 
+The web app in this lesson does not need a database. All of the data is stored in CSV files; however, it 
+is possible to include a database as part of a Flask app. One common use case would be to store user login
+information such as username and password. 
+Flask is database agnostic meaning Flask can work with a number of different database types. If you are 
+interested in learning about how to include a database as part of a Flask app, here are some resources:
+
+Flask Mega Tutorial
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database
+Heroku - Provision a Database
+https://devcenter.heroku.com/articles/getting-started-with-python#provision-a-database
+
+#### Here is a reminder of the steps for deploying your app ####
+- find a data set or a few data sets that you're interested in
+- explore and clean the data set
+- put the data into a csv file or files - you can use pandas or spreadsheet software to do this
+- upload your data sets to the correct folder
+- write a Python script to read in the data set and set up the Plotly visualizations (wrangle_data.py, index.html)
+- set up a virtual environment and install the necessary libraries to run your app
+- run your web app locally to make sure that everything works
+- deploy the app to Heroku or some other back-end service
+
+The template code is also available on GitHub as part of the data scientist nanodegree term 2 repo.
+https://github.com/udacity/DSND_Term2/tree/master/lessons/WebDevelopment
+
+#### Where to Build the Web App #### 
+We are providing a workspace containing a web app template. You can use this template to build and 
+deploy your web app within the classroom. 
+
+The classroom has an Ubuntu Linux environment. Developing the app locally on macOS should be very similar. 
+
+On a Windows machine, the commands are slightly different and you'll need to use the command prompt. 
+This link contains a comparison of MS-DOS vs Linux commands.
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ap-doslinux.html
+
+To install the Heroku command line interface on a Windows machine, follow the instructions here on the 
+Heroku website.
+https://devcenter.heroku.com/articles/heroku-cli
+
+#### Advanced Version of the Exercise #### 
+If you'd like an extra challenge, consider using an API to obtain your data. API stands for Application Programming 
+Interface. An API provides a convenient way for two applications to communicate with each other. To be more 
+concrete you can pull data directly from the World Bank API, clean the data in the back-end using pandas, and 
+then display the results on your front-end. This would be instead of using a csv file for your data. 
+
+The benefit is that if the data ever changes, your web app will automatically have the correct data. Many 
+companies provide APIs for accessing their data including Facebook, Twitter, Google among others. As an example, 
+here is an API for pulling data about DVDs, movies, books, and games.
+http://developer.rovicorp.com/docs
+
+After the workspace, you'll find a set of concepts that explain how to use the World Bank API. Go through that 
+material if you'd like an extra challenge for building your web app.

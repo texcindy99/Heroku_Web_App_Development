@@ -1,0 +1,80 @@
+Instructions Deploying from the Udacity Classroom
+
+Before deployment, check if web app can run correctly locally:
+-> cd 5_deployment
+-> env | grep WORK   (get SPACEDOMAIN AND SPACEID for web addewss)
+-> python worldbank_runapp.py  (run server)
+
+Here is the code used in the screencast to get the web app running:
+
+1. First, a new folder was created for the web app and all of the web app folders and 
+files were moved into the folder:
+-> cd 5_deployment
+-> mkdir web_app
+-> mv -t web_app data worldbankapp wrangling_scripts worldbank.py
+
+2. The next step was to create a virtual environment and then activate the environment: 
+https://stackoverflow.com/questions/41430706/pyvenv-returns-non-zero-exit-status-1-during-the-installation-of-pip-stage
+
+-> python -m venv --without-pip ./pyvenv.d            # Create virtual environment this way;
+-> source ./pyvenv.d/bin/activate                     # Now activate this new virtual environment.
+# Within it, invoke this well-known script to manually install pip(1) into /pyvenv.d:
+-> curl https://bootstrap.pypa.io/get-pip.py | python  
+-> deactivate                                         # Next, reactivate this virtual environment,
+-> source ./pyvenv.d/bin/activate                     # which will now include the pip(1) command.
+-> which pip                                          # Verify that pip(1) is indeed present.
+-> pip install --upgrade pip                          # And finally, upgrade pip(1) itself;
+
+{This doesn't work -> conda update python
+                   -> python3 -m venv worldbankvenv
+                   -> source worldbankenv/bin/activate}
+
+3. Then, pip install the Python libraries needed for the web app
+-> pip install flask pandas plotly gunicorn
+
+4. The next step was to install the heroku command line tools:
+-> curl https://cli-assets.heroku.com/install-ubuntu.sh | sh https://devcenter.heroku.com/articles/heroku-cli#standalone-installation 
+Check Heroku version
+-> heroku —-version
+
+5. And then log into heroku with the following command
+-> heroku login -i
+Heroku asks for your account email address and password, which you type into the 
+terminal and press enter.
+
+6. The next steps involved some housekeeping:
+- Save worldbank_runapp.py as worldbank.py and remove app.run() line.
+- type cd web_app into the Terminal so that you are inside the folder with your web app code.
+
+7. Then create a proc file, which tells Heroku what to do when starting your web app:
+-> touch Procfile
+
+8. Then open the Procfile and type:
+-> web gunicorn worldbank:app
+
+9. Next, create a requirements file, which lists all of the Python library that your app depends on:
+-> pip freeze > requirements.txt
+
+10. And initialize a git repository and make a commit:
+-> git init
+-> git add .
+(If first time login to Heroku, set up user information as below:
+-> git config --global user.email "something@example.com"
+-> git config --global user.name "MyName")
+Then commit
+-> git commit -m "first commit"
+
+11.Now, create a heroku app:
+-> heroku create my-app-name
+where my-app-name is a unique name that nobody else on Heroku has already used.
+
+The heroku create command should create a git repository on Heroku and a web address 
+for accessing your web app. You can check that a remote repository was added to your git repository 
+with the following terminal command:
+-> git remote -v
+
+13. Next, you need to push your git repository to the remote heroku repository with this command:
+-> git push heroku master
+
+14. Now, you can type your web app's address in the browser to see the results.
+
