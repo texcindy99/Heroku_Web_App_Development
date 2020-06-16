@@ -18,8 +18,8 @@ This is the web developement project which is finally deployed on Heroku.
 
 ## Project Instruction <a name="instruction"></a>
 
-Please check 5_deployment_instruction_from_Udacity_Classroom.txt for deployment from Udacity classroom and 
-Create_virtual_environment.txt for deployment from your local computer.
+Please check __"5_deployment_instruction_from_Udacity_Classroom.txt"__ for deployment from Udacity classroom and 
+ __"Create_virtual_environment.txt"__ for deployment from your local computer.
 
 ## File Descriptions <a name="files"></a>
 
