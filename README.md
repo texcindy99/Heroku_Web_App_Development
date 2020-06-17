@@ -26,8 +26,8 @@ Please check __"5_deployment_instruction_from_Udacity_Classroom.txt"__ for deplo
 All the web app files are in ./web_app
 
 I don't include the virtual environment folder here. You can build your own following instructions.
-But I include example Procfile.txt and requirements.txt files here and you can aslo build your own 
-following instructions.
+But I include example Procfile (Note that Procfile shoul
+dn't have file extension) and requirements.txt files here and you can aslo build your own following instructions.
 
 worldbank.py is already updated according to instructions for web app deployement.
 worldbank_runapp.py is for checking web app locally.
@@ -36,12 +36,10 @@ The data file are available in ./web_app/data.
 
 ## Results <a name="results"></a>
 
-The strange thing is I got error when viewing webpages on Heroku as below although my deployment has no issue reported.
-"Internal Server Error
-The server encountered an internal error and was unable to complete your request. Either the server is overloaded 
-or there is an error in the application." 
+Once the deployement is successful on Heroku, the webpage can be viewed at the address given by the Heroku shown
+at the end of the deployment messages.
 
-I am still searching for solutions. 
+For example webpage, please check https://dsnd-udacity-webapp.herokuapp.com/.
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
 
