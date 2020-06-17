@@ -33,7 +33,7 @@ https://stackoverflow.com/questions/41430706/pyvenv-returns-non-zero-exit-status
 -> pip install flask pandas plotly gunicorn
 
 4. The next step was to install the heroku command line tools:
--> curl https://cli-assets.heroku.com/install-ubuntu.sh | sh https://devcenter.heroku.com/articles/heroku-cli#standalone-installation 
+-> curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 Check Heroku version
 -> heroku —-version
 
@@ -58,9 +58,9 @@ terminal and press enter.
 10. And initialize a git repository and make a commit:
 -> git init
 -> git add .
-(If first time login to Heroku, set up user information as below:
+Set up user information as below:
 -> git config --global user.email "something@example.com"
--> git config --global user.name "MyName")
+-> git config --global user.name "MyName"
 Then commit
 -> git commit -m "first commit"
 
