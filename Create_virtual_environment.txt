@@ -27,6 +27,9 @@ in the workspace classroom, you first need to update the Python installation as 
 Open a terminal window in a workspace and type:
 -> conda update python
 When asked for confirmation, type y and hit enter. Your Python installation should update.
+Note that this command may take forever to run. If that is the case on your computer, please use the
+work around method in the link below:
+https://stackoverflow.com/questions/41430706/pyvenv-returns-non-zero-exit-status-1-during-the-installation-of-pip-stage
 
 Next, make sure you are in the folder where you want to build your web app. In the classroom, the workspace 
 folder is fine. But on your personal computer, you'll want to make a new folder. For example:
