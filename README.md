@@ -26,13 +26,13 @@ Please check __"5_deployment_instruction_from_Udacity_Classroom.txt"__ for deplo
 All the web app files are in ./web_app
 
 I don't include the virtual environment folder here. You can build your own following instructions.
-But I include example Procfile (Note that Procfile shoul
+But in the web_app folder I include example Procfile (Note that Procfile shoul
 dn't have file extension) and requirements.txt files here and you can aslo build your own following instructions.
 
 worldbank.py is already updated according to instructions for web app deployement.
-worldbank_runapp.py is for checking web app locally.
+worldbank_runapp.py is just for checking web app locally.
 
-The data file are available in ./web_app/data.
+There are four data file available in ./web_app/data.
 
 ## Results <a name="results"></a>
 
